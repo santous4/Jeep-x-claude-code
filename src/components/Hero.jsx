@@ -7,13 +7,21 @@ const AUTOPLAY_MS = 7000;
 
 export default function Hero() {
   const [slide, setSlide] = useState(0);
+  const [playing, setPlaying] = useState(
+    () => typeof window === "undefined" || !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
 
   useEffect(() => {
+    if (!playing) return;
     const id = setInterval(() => {
       setSlide((s) => (s + 1) % SLIDES.length);
     }, Math.max(2500, AUTOPLAY_MS));
     return () => clearInterval(id);
-  }, []);
+  }, [playing]);
+
+  const goTo = (i) => setSlide(((i % SLIDES.length) + SLIDES.length) % SLIDES.length);
+  const goPrev = () => goTo(slide - 1);
+  const goNext = () => goTo(slide + 1);
 
   const d = SLIDES[slide];
 
@@ -71,7 +79,7 @@ export default function Hero() {
 
         <div className="hero__slides">
           {SLIDES.map((s, i) => (
-            <button key={s.label} className="hero__slide-btn" onClick={() => setSlide(i)}>
+            <button key={s.label} className="hero__slide-btn" onClick={() => goTo(i)}>
               <span className="hero__slide-track">
                 <span
                   className="hero__slide-fill"
@@ -86,6 +94,36 @@ export default function Hero() {
               </span>
             </button>
           ))}
+
+          <div className="hero__controls" role="group" aria-label="Slideshow controls">
+            <button className="hero__control-btn" onClick={goPrev} aria-label="Previous slide">
+              <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                <path d="M10 2L4 8l6 6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            <button
+              className="hero__control-btn"
+              onClick={() => setPlaying((p) => !p)}
+              aria-label={playing ? "Pause slideshow" : "Play slideshow"}
+              aria-pressed={playing}
+            >
+              {playing ? (
+                <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                  <rect x="3" y="2" width="3.4" height="12" fill="currentColor" />
+                  <rect x="9.6" y="2" width="3.4" height="12" fill="currentColor" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                  <path d="M4 2l10 6-10 6V2z" fill="currentColor" />
+                </svg>
+              )}
+            </button>
+            <button className="hero__control-btn" onClick={goNext} aria-label="Next slide">
+              <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                <path d="M6 2l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
