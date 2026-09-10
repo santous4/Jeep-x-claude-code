@@ -1,0 +1,54 @@
+.why {
+  padding: clamp(52px, 5.4vw, 96px) 0 clamp(56px, 5.4vw, 96px);
+}
+.why__head {
+  margin-bottom: clamp(28px, 3.4vw, 52px);
+}
+.why__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: clamp(14px, 1.6vw, 22px);
+}
+.why-card {
+  background: var(--grey-100);
+  padding: 26px 22px 28px;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  color: var(--brand-black);
+  transition: background 0.5s, color 0.5s;
+}
+.why-card:hover {
+  background: var(--brand-black);
+  color: var(--brand-white);
+}
+.why-card__icon {
+  width: 26px;
+  height: 26px;
+  filter: var(--icon-filter-brand);
+  margin-bottom: auto;
+}
+.why-card__figure {
+  font-size: clamp(52px, 6vw, 76px);
+  font-weight: 700;
+  line-height: 0.92;
+  font-variant-numeric: tabular-nums;
+  margin-top: 28px;
+}
+.why-card__rule {
+  width: 40px;
+  height: 3px;
+  background: var(--brand-yellow);
+  margin: 18px 0 14px;
+}
+.why-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.why-card__copy {
+  font-size: 14px;
+  line-height: 1.44;
+}

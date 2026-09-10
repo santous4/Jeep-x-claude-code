@@ -1,0 +1,20 @@
+:root{
+/* Type ramp — exact px values from the brand stylesheet's utility classes */
+--font-size-hero:80px;--line-height-hero:1;
+--font-size-h1:48px;--line-height-h1:1.25;
+--font-size-h2:37px;--line-height-h2:1.41;
+--font-size-h3:31px;--line-height-h3:1.55;
+--font-size-h4:26px;--line-height-h4:1.38;
+--font-size-lead:24px;--line-height-lead:1.5;
+--font-size-h5:21px;--line-height-h5:1.52;
+--font-size-body:18px;--line-height-body:1.44;
+--font-size-body-loose:18px;--line-height-body-loose:1.78;
+--font-size-small:16px;--line-height-small:1.38;
+--font-size-button:16px;--line-height-button:normal;
+--font-size-button-sm:14px;
+--font-size-xsmall:12px;--line-height-xsmall:1.67;
+--font-size-tiny:10px;--line-height-tiny:1.6;
+/* Component-scale sizes seen in production markup */
+--font-size-hero-model-name:2.8rem;--font-size-hero-subhead:4rem;--font-size-hero-price:1.938rem;
+--font-size-section-title:2.313rem;--font-size-card-title:17px;--font-size-meta:.688rem;
+--letter-spacing-default:normal;--text-transform-cta:uppercase}

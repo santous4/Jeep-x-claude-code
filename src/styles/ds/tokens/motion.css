@@ -1,0 +1,5 @@
+:root{--duration-cta:.5s; /* @kind other */
+--duration-fast:.2s; /* @kind other */
+--easing-default:ease; /* @kind other */
+--transition-cta:all .5s ease; /* @kind other */
+--transition-color:color .2s ease,background-color .2s ease /* @kind other */}

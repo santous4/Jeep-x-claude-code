@@ -1,0 +1,11 @@
+:root{
+/* Bootstrap-4 grid underpins the site; these are the recurring hand-set values */
+--space-1:4px;--space-2:8px;--space-3:10px;--space-4:14px;--space-5:15px;--space-6:16px;--space-7:20px;--space-8:21px;--space-9:24px;--space-10:30px;--space-11:32px;--space-12:38px;--space-13:50px;--space-14:54px;--space-15:60px;--space-16:64px;--space-17:70px;
+--section-padding-y:50px;--section-padding-y-mobile:32px;
+--page-gutter:54px;--page-gutter-right:38px;--page-gutter-mobile:24px;
+--hero-padding:3.5rem 10rem 0;--footer-padding:32px 21px;
+--container-max:1440px;
+/* Radii — production values, deliberately near-square */
+--radius-none:0;--radius-input:4px;--radius-dropdown:5px;--radius-card:10px;--radius-chip:15px;--radius-pill:100px;
+/* Control sizes */
+--control-height:40px;--control-height-sm:31px;--control-height-field:44px;--button-padding:7px 16px 8px;--button-padding-cta:.375rem 1.3rem;--button-padding-mobile:5px 16px;--icon-size:24px;--icon-size-mobile:20px;--header-logo-height:41px;--header-logo-height-mobile:31px}

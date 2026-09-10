@@ -1,0 +1,141 @@
+/* ---------- Reset ---------- */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--surface-page);
+  color: var(--text-body);
+  font-family: var(--font-brand), Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: var(--brand-black);
+  text-decoration: none;
+}
+button {
+  font-family: inherit;
+}
+input,
+select,
+button {
+  box-sizing: border-box;
+}
+::selection {
+  background: var(--brand-yellow);
+  color: var(--brand-black);
+}
+:focus-visible {
+  outline: 2px solid var(--brand-yellow);
+  outline-offset: 2px;
+}
+
+/* Keeps anchor-linked sections from landing underneath the sticky
+   announcement bar + header when navigated to via #hash or scrollIntoView. */
+:where(#top, #lineup, #tools, #life, #pre-owned, #why) {
+  scroll-margin-top: 112px;
+}
+
+/* ---------- Layout utilities ---------- */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 3.4vw, 56px);
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Section header pattern ---------- */
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--grey-700);
+  margin-bottom: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.eyebrow--on-dark {
+  color: var(--brand-yellow);
+}
+.heading {
+  font-size: clamp(34px, 5.6vw, 82px);
+  line-height: 0.94;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  color: inherit;
+}
+
+/* ---------- Scroll-reveal engine ----------
+   Driven by src/hooks/useSiteMotion.js, which toggles the
+   .is-visible class on [data-anim] elements as they enter the
+   viewport (with a force-show fallback + prefers-reduced-motion). */
+[data-anim="rise"] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+[data-anim="rise"].is-visible {
+  opacity: 1;
+  transform: none;
+}
+[data-anim="wipe"] {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+[data-anim="wipe"].is-visible {
+  clip-path: inset(0 0 0 0);
+}
+[data-word] {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+[data-word].is-visible {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-anim="rise"],
+  [data-anim="wipe"],
+  [data-word] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- Hero ken-burns ---------- */
+@keyframes jeep-kenburns {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1.13);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-kb] {
+    animation: none !important;
+  }
+}

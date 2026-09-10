@@ -1,0 +1,19 @@
+:root{
+/* Brand */
+--brand-yellow:#ffba00;--brand-yellow-hover:#e6a700;--brand-black:#000000;--brand-white:#ffffff;
+/* Neutrals — taken verbatim from the production stylesheets */
+--grey-900:#191920;--grey-850:#212121;--grey-700:#636363;--grey-650:#707070;--grey-600:#757575;--grey-500:#888b8d;--grey-400:#9e9e9e;--grey-300:#cccccc;--grey-250:#e0e0e0;--grey-200:#eeeeee;--grey-150:#f0f0f0;--grey-100:#f5f5f5;--grey-50:#fcfcfc;
+/* Semantic text */
+--text-primary:var(--grey-850);--text-body:var(--brand-black);--text-muted:var(--grey-600);--text-placeholder:var(--grey-400);--text-inverse:var(--brand-white);--text-on-brand:var(--brand-black);--text-strikethrough:var(--grey-400);--text-footer-link:rgba(255,255,255,.7);
+/* Semantic surfaces */
+--surface-page:var(--brand-white);--surface-card:var(--brand-white);--surface-subtle:var(--grey-200);--surface-muted:var(--grey-100);--surface-accordion:var(--grey-50);--surface-inverse:var(--brand-black);--surface-footer:var(--brand-black);--surface-header:var(--brand-black);--surface-inpage-menu:var(--grey-900);--surface-brand:var(--brand-yellow);
+/* Semantic lines */
+--border-default:var(--grey-250);--border-strong:var(--grey-650);--border-input:var(--grey-400);--border-divider:var(--grey-150);--border-brand:var(--brand-yellow);--border-footer:rgba(255,255,255,.1);--border-accent-underline:var(--brand-yellow);
+/* Interactive */
+--action-primary-bg:var(--brand-yellow);--action-primary-fg:var(--brand-black);--action-primary-bg-hover:var(--brand-black);--action-primary-fg-hover:var(--brand-white);--action-secondary-bg:var(--brand-black);--action-secondary-fg:var(--brand-white);--action-tertiary-bg:var(--brand-white);--action-tertiary-fg:var(--brand-black);--action-disabled-bg:var(--grey-500);--action-disabled-opacity:.5; /* @kind other */
+/* Steps + status */
+--step-1:var(--brand-yellow);--step-2:var(--grey-700);--step-3:var(--brand-black);--alert-bg:var(--brand-yellow);--alert-fg:var(--brand-black);--focus-ring:rgba(255,186,0,.5);
+/* Filter that recolours a black line icon to brand yellow (production technique) */
+--icon-filter-brand:invert(99%) sepia(31%) saturate(4773%) hue-rotate(312deg) brightness(86%) contrast(116%); /* @kind other */
+--icon-filter-white:brightness(0) invert(1); /* @kind other */
+--icon-filter-black:invert(1) /* @kind other */}

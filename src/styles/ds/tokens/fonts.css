@@ -1,0 +1,13 @@
+/* Jeep UAE ships its webfonts under the alias "BrandFont" / "BrandFontMedium".
+   Production (styles/JEEP_FE_EN.css on www.jeep-dubaiuae.com) declares them as:
+     src: local(BrandFont-Regular), url(/assets/fonts/Jeep/roboto-regular.woff2) format("woff2"), …
+   Those binaries were not part of the captured site. The @font-face rules below keep the production
+   family names and the production local() lookups; add the real url() sources when the .woff2 files
+   are supplied. Until then Roboto — the family the production filenames name — is loaded from Google
+   Fonts and picked up through the fallback stack. */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@font-face{font-family:BrandFont;src:local("BrandFont-Light"),local("Roboto Light"),local("Roboto");font-weight:300;font-style:normal;font-stretch:normal;font-display:block}
+@font-face{font-family:BrandFont;src:local("BrandFont-Regular"),local("Roboto");font-weight:400;font-style:normal;font-stretch:normal;font-display:block}
+@font-face{font-family:BrandFont;src:local("BrandFont-Bold"),local("Roboto Bold"),local("Roboto");font-weight:700;font-style:normal;font-stretch:normal;font-display:block}
+@font-face{font-family:BrandFontMedium;src:local("BrandFont-Medium"),local("Roboto Medium"),local("Roboto");font-weight:500;font-style:normal;font-stretch:normal;font-display:block}
+:root{--font-brand:"BrandFont","Roboto",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica Neue,sans-serif;--font-brand-medium:"BrandFontMedium","Roboto",sans-serif;--font-weight-light:300;--font-weight-regular:400;--font-weight-medium:500;--font-weight-bold:700}
